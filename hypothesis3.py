@@ -52,10 +52,7 @@ df['adequate_antenatal'] = (df['Antenatal_visits'] >= 4).astype(int)
 print(f"- 4+ антенатальных посещений: {df['adequate_antenatal'].mean():.2%}")
 
 # Полная вакцинация
-df['full_vaccination'] = (
-    (df['DPT_full'] == 1) & 
-    (df['MEASLES_full'] == 1)
-).astype(int)
+df['full_vaccination'] = ((df['DPT_full'] == 1) & (df['MEASLES_full'] == 1)).astype(int)
 print(f"- Полная вакцинация: {df['full_vaccination'].mean():.2%}")
 
 # Тип поселения

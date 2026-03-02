@@ -12,6 +12,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import roc_auc_score, roc_curve
 import warnings
+from scipy.stats import pearsonr
 warnings.filterwarnings('ignore')
 
 print("=" * 80)
@@ -260,7 +261,7 @@ plt.xlabel('Общее число рожденных детей', fontsize=12)
 plt.ylabel('Вес при рождении (кг)', fontsize=12)
 plt.title('Связь между числом детей в семье и весом при рождении', fontsize=14)
 
-from scipy.stats import pearsonr
+
 corr, p_val = pearsonr(scatter_data['Tot_child_born'], scatter_data['birth_weight_clean'])
 plt.text(0.05, 0.95, f'Корреляция: r={corr:.3f}\np-value: {p_val:.4f}',
         transform=plt.gca().transAxes, bbox=dict(boxstyle='round', facecolor='white', alpha=0.8))
